@@ -1,0 +1,27 @@
+{
+  "name": "finance-csv",
+  "version": "1.0.0",
+  "description": "A project to process finance csv data.",
+  "main": "index.js",
+  "dependencies": {
+    "tape": "^4.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "jsdoc": "^3.6.3",
+    "tap-nirvana": "^1.1.0",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "test": "tape src/test/**/*.js",
+    "doc": "jsdoc -c jsdoc.json",
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "watch": "watch 'clear && npm run -s test | tap-nirvana && npm run -s lint' src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:JacobRichardson/finance-csv.git"
+  },
+  "author": "Jacob Richardson",
+  "license": "ISC"
+}
