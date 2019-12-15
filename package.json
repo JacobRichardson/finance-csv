@@ -4,6 +4,7 @@
   "description": "A project to process finance csv data.",
   "main": "index.js",
   "dependencies": {
+    "riteway": "^6.1.1",
     "tape": "^4.11.0"
   },
   "devDependencies": {
