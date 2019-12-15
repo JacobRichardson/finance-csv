@@ -3,4 +3,9 @@
  */
 
 // Export the config object.
-module.exports = {};
+module.exports = {
+
+    database: {
+        connectionString: 'mongodb://localhost/finance_csv'
+    }
+};
