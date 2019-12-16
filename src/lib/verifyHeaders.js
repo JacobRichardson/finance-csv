@@ -6,18 +6,16 @@
 // Export the module.
 module.exports = verifyHeaders;
 
-// Imports.
-const requireDirectory = require('require-directory');
-const providers = requireDirectory(module, '../schema');
-
 /**
  * Verifies the csv data has the correct headers.
- * @param {String} provider The provider of the csv file.
- * @param {Array<String>} headers An array of the header strings.
+ * @param {Object} opts The opts paramter.
+ * @param {String} opts.provider The provider of the csv file.
+ * @param {Array<String>} opts.headers An array of the header strings.
+ * @param {Object} opts.providers The providers schema of all providers.
  * @returns {Boolean} Wether or not the headers are correct.
  * @throws {Error} An error.
  */
-function verifyHeaders(provider, headers) {
+function verifyHeaders({provider, headers, providers}) {
 
     // If type of provider does not equal string.
     if (typeof (provider) !== 'string') {
