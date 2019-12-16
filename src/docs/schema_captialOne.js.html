@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: schema/captialOne.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,71 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: schema/captialOne.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** 
+ * This module will include related information
+ * about Capital One csv data.
+ */
 
+// Create the capital one schema object.
+const capitalOneSchema = {
 
-    <h3> </h3>
+    headers: {
+        "Transaction Date": {
 
+        },
+        "Posted Date": {
 
+        },
+        "Card No.": {
 
+        },
+        "Description": {
 
+        },
+        "Category": {
 
+        },
+        "Debit": {
 
+        },
+        "Credit": {
 
+        }
+    }
+}
 
+/**
+ * Transforms the raw json into a transaction.
+ * @param {Object} json The raw json data from the csv file.
+ * @returns {Object} A transaction object to be inserted into the db.
+ */
+function toTransaction(json) {
 
+    // Return an object with the correct properties.
+    return {
+        date: json['Transaction Date'],
+        description: json['Description'],
+        category: json['Category'],
+        amount: (json['Debit'] * -1) || (json['Credit'])
+    }
+}
 
-    
+// Attach the to transaction function to the schema.
+capitalOneSchema.toTransaction = toTransaction;
 
-
-
-
-
+// Export the schema.
+module.exports = capitalOneSchema;</code></pre>
+        </article>
+    </section>
 
 
 

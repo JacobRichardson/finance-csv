@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: schema/citizensCC.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,68 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: schema/citizensCC.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** 
+ * This module will include related information
+ * about Citizen's Bank Credit Card csv data.
+ */
 
+// Create the citizens bank credit card.
+const citizensBankCCSchema = {
 
-    <h3> </h3>
+    headers: {
+        "Date": {
 
+        },
+        "Activity Type": {
 
+        },
+        "Merchant Name": {
 
+        },
+        "Merchant Category Description": {
 
+        },
+        "Amount": {
 
+        },
+        "Rewards": {
 
+        }
+    }
+}
 
+/**
+ * Transforms the raw json into a transaction.
+ * @param {Object} json The raw json data from the csv file.
+ * @returns {Object} A transaction object to be inserted into the db.
+ */
+function toTransaction(json) {
 
+    // Return an object with the correct properties.
+    return {
+        date: json['Transaction Date'],
+        description: json['Merchant Name'],
+        category: json['Merchant Category Description'],
+        amount: (json['Amount'] * -1)
+    }
+}
 
+// Attach the to transaction function to the schema.
+citizensBankCCSchema.toTransaction = toTransaction;
 
-    
-
-
-
-
-
+// Export the schema.
+module.exports = citizensBankCCSchema;</code></pre>
+        </article>
+    </section>
 
 
 

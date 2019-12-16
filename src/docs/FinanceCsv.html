@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Global</title>
+    <title>JSDoc: Class: FinanceCsv</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Global</h1>
+    <h1 class="page-title">Class: FinanceCsv</h1>
 
     
 
@@ -28,7 +28,9 @@
 
 <header>
     
-        <h2></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>FinanceCsv<span class="signature">(opts)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>Finance Csv Class.</p></div>
         
     
 </header>
@@ -38,73 +40,12 @@
     
         
 
-        
-
-
-<dl class="details">
-
+    
+    <h2>Constructor</h2>
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="bulkInsert"><span class="type-signature">(async) </span>bulkInsert<span class="signature">(model, data)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+    <h4 class="name" id="FinanceCsv"><span class="type-signature"></span>new FinanceCsv<span class="signature">(opts)</span><span class="type-signature"></span></h4>
     
 
     
@@ -112,7 +53,7 @@
 
 
 <div class="description">
-    <p>Inserts multiple records into a model.</p>
+    <p>Creates an instance of FinanceCsv.</p>
 </div>
 
 
@@ -148,13 +89,13 @@
 
         <tr>
             
-                <td class="name"><code>model</code></td>
+                <td class="name"><code>opts</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Object</span>
 
 
             
@@ -164,20 +105,62 @@
 
             
 
-            <td class="description last"><p>The name of the model.</p></td>
+            <td class="description last"><p>The opts object.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>processCsv</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The process csv dependency.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>toJson</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;Object></span>
+<span class="param-type">function</span>
 
 
             
@@ -187,7 +170,106 @@
 
             
 
-            <td class="description last"><p>An array of data objects.</p></td>
+            <td class="description last"><p>The to json dependency.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>verifyHeaders</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The verify headers dependency.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>providers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The providers schema dependency.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toTransactions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The to transaction dependency.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bulkInsert</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The bulk insert dependency.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -228,7 +310,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_bulkInsert.js.html">lib/bulkInsert.js</a>, <a href="lib_bulkInsert.js.html#line19">line 19</a>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -251,63 +333,39 @@
 
 
 
-<h5>Throws:</h5>
 
-        
 
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p>An error.</p>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
         <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
+            <dt><a href="FinanceCsv.html">FinanceCsv</a></dt>
+            <dd></dd>
         </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
+    
 
     
 
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>The inserted data.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;Object></span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
-
-
+    
+        <h3 class="subsection-title">Methods</h3>
 
         
             
@@ -315,7 +373,7 @@
     
 
     
-    <h4 class="name" id="calculateTotals"><span class="type-signature"></span>calculateTotals<span class="signature">(transactions)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="calculateTotals"><span class="type-signature"></span>calculateTotals<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -323,7 +381,7 @@
 
 
 <div class="description">
-    <p>Calculates the totals of given transactions.</p>
+    <p>Calculates the totals of the transaction data.</p>
 </div>
 
 
@@ -346,6 +404,50 @@
 
         <th>Type</th>
 
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The opts object.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
         
 
         
@@ -372,10 +474,58 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>An array of transactions.</p></td>
+            <td class="description last"><p>An array of transaction objects.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>calculateTotals</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>An optional custom calculate totals function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -416,7 +566,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_calculateTotals.js.html">lib/calculateTotals.js</a>, <a href="lib_calculateTotals.js.html#line20">line 20</a>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line136">line 136</a>
     </li></ul></dd>
     
 
@@ -475,6 +625,314 @@ the total amount of credits.</p>
     
 
     
+    <h4 class="name" id="main"><span class="type-signature">(async) </span>main<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Handles the entire process of handling the csv data.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The opts object.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>csv</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The raw csv data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>preformVerifyHeaders</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Wether or not to verify the headers.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>preformInsert</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Wether or not to preform an insert</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>preformCalculateTotals</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Wether or not to calculate
+the totals of the transactions.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line161">line 161</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>An error.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The total for each category in debits and
+the total amount of credits.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="processCsv"><span class="type-signature"></span>processCsv<span class="signature">(csv)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;String>>}</span></h4>
     
 
@@ -483,8 +941,8 @@ the total amount of credits.</p>
 
 
 <div class="description">
-    <p>This function turns the csv data into
-a 2D array.</p>
+    <p>Processes raw csv data using the process
+csv dependency.</p>
 </div>
 
 
@@ -577,7 +1035,7 @@ a 2D array.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_processCsv.js.html">lib/processCsv.js</a>, <a href="lib_processCsv.js.html#line15">line 15</a>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -643,9 +1101,7 @@ a 2D array.</p>
 
 
 <div class="description">
-    <p>Converts the 2D array of csv into keyed Json. This mean
-it will create an object for each row in the csv with
-the keys equal to the column headers.</p>
+    <p>Converts processed csv data into json.</p>
 </div>
 
 
@@ -687,7 +1143,7 @@ the keys equal to the column headers.</p>
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;Array></span>
+<span class="param-type">Array.&lt;Array.&lt;String>></span>
 
 
             
@@ -697,7 +1153,7 @@ the keys equal to the column headers.</p>
 
             
 
-            <td class="description last"><p>A 2D array of the csv data.</p></td>
+            <td class="description last"><p>A 2d array of the csv data.</p></td>
         </tr>
 
     
@@ -738,7 +1194,7 @@ the keys equal to the column headers.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_toJson.js.html">lib/toJson.js</a>, <a href="lib_toJson.js.html#line16">line 16</a>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -761,42 +1217,13 @@ the keys equal to the column headers.</p>
 
 
 
-<h5>Throws:</h5>
-
-        
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p>If a 2D array is not supplied to the function.</p>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-
-    
 
 
 <h5>Returns:</h5>
 
         
 <div class="param-desc">
-    <p>An array of he json data.</p>
+    <p>The resulting keyed json.</p>
 </div>
 
 
@@ -825,801 +1252,6 @@ the keys equal to the column headers.</p>
     
 
     
-    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Transforms the raw json into a transaction.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The raw json data from the csv file.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_captialOne.js.html">schema/captialOne.js</a>, <a href="schema_captialOne.js.html#line39">line 39</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A transaction object to be inserted into the db.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Transforms the raw json into a transaction.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The raw json data from the csv file.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_chase.js.html">schema/chase.js</a>, <a href="schema_chase.js.html#line36">line 36</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A transaction object to be inserted into the db.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Transforms the raw json into a transaction.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The raw json data from the csv file.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_citizensCC.js.html">schema/citizensCC.js</a>, <a href="schema_citizensCC.js.html#line36">line 36</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A transaction object to be inserted into the db.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Transforms the raw json into a transaction.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The raw json data from the csv file.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_citizensChecking.js.html">schema/citizensChecking.js</a>, <a href="schema_citizensChecking.js.html#line42">line 42</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A transaction object to be inserted into the db.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    <p>Transforms the raw json into a transaction.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>json</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The raw json data from the csv file.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_discover.js.html">schema/discover.js</a>, <a href="schema_discover.js.html#line33">line 33</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>A transaction object to be inserted into the db.</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Object</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id="toTransactions"><span class="type-signature"></span>toTransactions<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
     
 
@@ -1628,8 +1260,7 @@ the keys equal to the column headers.</p>
 
 
 <div class="description">
-    <p>Converts an array of json into an array of transaction
-objects using the providers 'to transaction' function.</p>
+    <p>Converts processed json into transaction objects.</p>
 </div>
 
 
@@ -1695,6 +1326,8 @@ objects using the providers 'to transaction' function.</p>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -1720,17 +1353,25 @@ objects using the providers 'to transaction' function.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>The provider of the json data.</p></td>
+            <td class="description last"><p>The actual provider.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>headers</code></td>
             
 
             <td class="type">
@@ -1743,10 +1384,18 @@ objects using the providers 'to transaction' function.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>An array of json data.</p></td>
+            <td class="description last"><p>An array processed json data.</p></td>
         </tr>
 
     
@@ -1766,10 +1415,53 @@ objects using the providers 'to transaction' function.</p>
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>The providers schema of all providers.</p></td>
+            <td class="description last"><p>The providers schema.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toTransactions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>An optional custom to transactions function.</p></td>
         </tr>
 
     
@@ -1817,7 +1509,7 @@ objects using the providers 'to transaction' function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_toTransactions.js.html">lib/toTransactions.js</a>, <a href="lib_toTransactions.js.html#line19">line 19</a>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line108">line 108</a>
     </li></ul></dd>
     
 
@@ -1840,35 +1532,6 @@ objects using the providers 'to transaction' function.</p>
 
 
 
-<h5>Throws:</h5>
-
-        
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p>An error.</p>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-
-    
 
 
 <h5>Returns:</h5>
@@ -1912,7 +1575,8 @@ objects using the providers 'to transaction' function.</p>
 
 
 <div class="description">
-    <p>Verifies the csv data has the correct headers.</p>
+    <p>Verifies the headers are correct for a given provider,
+the headers array, and a given providers schema.</p>
 </div>
 
 
@@ -1964,7 +1628,7 @@ objects using the providers 'to transaction' function.</p>
 
             
 
-            <td class="description last"><p>The opts paramter.</p>
+            <td class="description last"><p>The opts object.</p>
                 <h6>Properties</h6>
                 
 
@@ -1977,6 +1641,8 @@ objects using the providers 'to transaction' function.</p>
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2003,10 +1669,18 @@ objects using the providers 'to transaction' function.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>The provider of the csv file.</p></td>
+            <td class="description last"><p>The actual provider.</p></td>
         </tr>
 
     
@@ -2026,10 +1700,18 @@ objects using the providers 'to transaction' function.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>An array of the header strings.</p></td>
+            <td class="description last"><p>An array of string headers.</p></td>
         </tr>
 
     
@@ -2049,10 +1731,20 @@ objects using the providers 'to transaction' function.</p>
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>The providers schema of all providers.</p></td>
+            <td class="description last"><p>The providers schema.</p></td>
         </tr>
 
     
@@ -2100,7 +1792,7 @@ objects using the providers 'to transaction' function.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_verifyHeaders.js.html">lib/verifyHeaders.js</a>, <a href="lib_verifyHeaders.js.html#line18">line 18</a>
+        <a href="app_finance-csv.js.html">app/finance-csv.js</a>, <a href="app_finance-csv.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -2123,35 +1815,6 @@ objects using the providers 'to transaction' function.</p>
 
 
 
-<h5>Throws:</h5>
-
-        
-
-<dl>
-    <dt>
-        <div class="param-desc">
-        <p>An error.</p>
-        </div>
-    </dt>
-    <dd></dd>
-    <dt>
-        <dl>
-            <dt>
-                Type
-            </dt>
-            <dd>
-                
-<span class="param-type">Error</span>
-
-
-            </dd>
-        </dl>
-    </dt>
-    <dd></dd>
-</dl>
-
-
-    
 
 
 <h5>Returns:</h5>
