@@ -6,7 +6,7 @@
 	, "keep_array_indentation": false
 	, "break_chained_methods": false
 	, "indent_scripts": "normal"
-	, "brace_style": "preserve-inline"
+	, "brace_style": "end-expand,preserve-inline"
 	, "space_before_conditional": true
 	, "space_after_named_function": true
 	, "space_after_anon_function": true
