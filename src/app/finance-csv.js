@@ -16,12 +16,12 @@ class FinanceCsv {
 	/**
 	 * Creates an instance of FinanceCsv.
 	 * @param {Object} opts The opts object.
-	 * @param {Function} opts.processCsv The process csv dependency.
-	 * @param {Function} opts.toJson The to json dependency.
-	 * @param {Function} opts.verifyHeaders The verify headers dependency.
-	 * @param {Object} opts.providers The providers schema dependency.
-	 * @param {Function} opts.toTransactions The to transaction dependency.
-	 * @param {Function} opts.bulkInsert The bulk insert dependency.
+	 * @param {Function} [opts.processCsv] The process csv dependency.
+	 * @param {Function} [opts.toJson] The to json dependency.
+	 * @param {Function} [opts.verifyHeaders] The verify headers dependency.
+	 * @param {Object} [opts.providers] The providers schema dependency.
+	 * @param {Function} [opts.toTransactions] The to transaction dependency.
+	 * @param {Function} [opts.bulkInsert] The bulk insert dependency.
 	 * @memberof FinanceCsv
 	 */
 	constructor({ processCsv, toJson, verifyHeaders, providers, toTransactions, calculateTotals, bulkInsert }) {
