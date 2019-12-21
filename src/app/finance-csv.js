@@ -5,9 +5,6 @@
 // Imports. 
 const requireDirectory = require('require-directory');
 
-// TODO: Use the google-sheets project.
-// const GoogleSheets = require('@bit/jacobrichardson.google-sheets.google-sheets');
-
 /** 
  * Finance Csv Class.
  */
@@ -24,7 +21,7 @@ class FinanceCsv {
 	 * @param {Function} [opts.bulkInsert] The bulk insert dependency.
 	 * @memberof FinanceCsv
 	 */
-	constructor({ processCsv, toJson, verifyHeaders, providers, toTransactions, calculateTotals, bulkInsert }) {
+	constructor({ processCsv, toJson, verifyHeaders, providers, toTransactions, calculateTotals, bulkInsert, googlSheet }) {
 
 		// Set dependencies as a new object.
 		this.dependencies = {};
@@ -39,6 +36,7 @@ class FinanceCsv {
 		this.dependencies.toTransactions = toTransactions || require('../lib/toTransactions');
 		this.dependencies.calculateTotals = calculateTotals || require('../lib/calculateTotals');
 		this.dependencies.bulkInsert = bulkInsert || require('../lib/bulkInsert');
+		this.dependencies.googlSheet = googlSheet || require('google-sheet');
 	}
 
 	/**
