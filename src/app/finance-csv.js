@@ -21,7 +21,7 @@ class FinanceCsv {
 	 * @param {Function} [opts.bulkInsert] The bulk insert dependency.
 	 * @memberof FinanceCsv
 	 */
-	constructor({ processCsv, toJson, verifyHeaders, providers, toTransactions, calculateTotals, bulkInsert, googlSheet }) {
+	constructor({ processCsv, toJson, verifyHeaders, providers, toTransactions, calculateTotals, bulkInsert, googleSheet, toSheetData, insertGoogleSheet }) {
 
 		// Set dependencies as a new object.
 		this.dependencies = {};
@@ -36,7 +36,9 @@ class FinanceCsv {
 		this.dependencies.toTransactions = toTransactions || require('../lib/toTransactions');
 		this.dependencies.calculateTotals = calculateTotals || require('../lib/calculateTotals');
 		this.dependencies.bulkInsert = bulkInsert || require('../lib/bulkInsert');
-		this.dependencies.googlSheet = googlSheet || require('google-sheet');
+		this.dependencies.googleSheet = googleSheet || require('google-sheet').GoogleSheets;
+		this.dependencies.toSheetData = toSheetData || require('../lib/toSheetData');
+		this.dependencies.insertGoogleSheet = insertGoogleSheet || require('../lib/insertGoogleSheet');
 	}
 
 	/**
@@ -146,20 +148,79 @@ class FinanceCsv {
 		return result;
 	}
 
+	/**
+	 * This module converts the totals object into usable sheet
+	 * data to insert into the google sheet.
+	 * @param {Object} opts The opts object.
+	 * @param {Object} opts.totals The totals object which contains
+	 * all the totals of the different categories.
+	 *  @param {String} opts.provider The actual provider.
+	 * @param {Object} [opts.providers] The providers schema.
+	 * @returns
+	 * @memberof FinanceCsv
+	 */
+	toSheetData({ totals, provider, providers }) {
+
+		// Create the to sheet data opts.
+		const toSheetDataOpts = {
+			totals
+			, provider
+			, providers: providers || this.dependencies.providers
+		}
+
+		// Retrieve the results.
+		const results = this.dependencies.toSheetData(toSheetDataOpts);
+
+		// Return the results.
+		return results;
+	}
+
+	/**
+	 * Inserts sheet data into the sheet.
+	 * @param {Object} opts The opts object.
+	 * @param {Object} opts.sheetId The id of the sheet where the data
+	 * is going to be inserted.
+	 * @param {Object} opts.data The data object which contains the
+	 * cell pair as the key and the value as the value of that property.
+	 * @param {Object} [opts.googleSheet] The google sheet dependency.
+	 * @returns
+	 * @memberof FinanceCsv
+	 */
+	async insertGoogleSheet ({ sheetId, data, googleSheet }) {
+
+		// Create the insert google sheet opts.
+		const insertGoogleSheetOpts = {
+			sheetId
+			, data
+			, googleSheet: googleSheet || this.dependencies.googleSheet
+		}
+
+		// Retrieve the result from inserting the data.
+		await this.dependencies.insertGoogleSheet(insertGoogleSheetOpts);
+
+		// Return true for now?
+		return true;
+	}
+
 	/** 
 	 * Handles the entire process of handling the csv data.
 	 * @param {Object} opts The opts object.
 	 * @param {String} opts.csv The raw csv data.
-	 * @param {Boolean} opts.preformVerifyHeaders Wether or not to verify the headers.
-	 * @param {Boolean} opts.preformInsert Wether or not to preform an insert
-	 * @param {Boolean} opts.preformCalculateTotals Wether or not to calculate
+	 * @param {String} opts.provider The provider of the csv data.
+	 * @param {String} opts.sheetId The sheet id the totals are being inserted into.
+	 * @param {Boolean} [opts.providers] The providers.
+	 * @param {Boolean} [opts.preformVerifyHeaders] Wether or not to verify the headers.
+	 * @param {Boolean} [opts.preformInsertDb] Wether or not to preform an insert
+	 * @param {Boolean} [opts.preformCalculateTotals] Wether or not to calculate
 	 * the totals of the transactions.
+	 * @param {Boolean} [ops.preformInsertGoogleSheet] Wether or not to perform an insert
+	 * into the google sheet.
 	 * @return {Object} The total for each category in debits and
 	 * the total amount of credits.
 	 * @throws {Error} An error.
 	 *  @memberof FinanceCsv
 	 */
-	async main ({ csv, preformVerifyHeaders, preformInsert, preformCalculateTotals }) {
+	async main ({ csv, provider, sheetId, providers, preformVerifyHeaders, preformInsertDb, preformCalculateTotals, preformInsertGoogleSheet }) {
 
 		// Process the csv using the process csv dependency.
 		const processedCsv = this.dependencies.processCsv(csv);
@@ -174,19 +235,22 @@ class FinanceCsv {
 			if (!hasValidHeaders) {
 
 				// Throw an error.
-				throw new Error('The headers were requested to be verified and they are incorrect.')
+				throw new Error('The headers were requested to be verified and they are incorrect.');
 			}
-
 		}
 
 		// Process the csv into json using the to json dependency.
-		const processedJson = this.dependencies.toJson(this.processCsv);
+		const processedJson = this.dependencies.toJson(processedCsv);
 
 		// Process the json into transaction objects using the to transaction dependency.
-		const transactions = this.dependencies.toTransactions(processedJson);
+		const transactions = this.dependencies.toTransactions({
+			data: processedJson
+			, provider
+			, providers: providers || this.dependencies.providers
+		});
 
 		// If preform insert is true.
-		if (preformInsert) {
+		if (preformInsertDb) {
 
 			// Pass the transactions to be inserted.
 			await this.dependencies.bulkInsert(transactions);
@@ -195,14 +259,35 @@ class FinanceCsv {
 		// Variable for the totals.
 		let totals;
 
+		// If preform calculations is truthy.
 		if (preformCalculateTotals) {
 
 			// Process the transaction to calculate the totals.
 			totals = this.dependencies.calculateTotals(transactions);
-
 		}
 
-		// TODO: Insert the totals into the spreadsheet if that is desired.
+		// If preform insert google sheet is truthy.
+		if (preformInsertGoogleSheet) {
+
+			// Retrieve the sheet data using totals and the provider.
+			const sheetData = this.dependencies.toSheetData({
+				totals
+				, provider
+				, providers: providers || this.dependencies.providers
+			});
+
+			// Create the insert google sheet opts.
+			const insertGoogleSheetOpts = {
+				sheetId
+				, data: sheetData
+				, googleSheet: this.dependencies.googleSheet
+			}
+
+			// Insert the information into the google sheet.
+			await this.dependencies.insertGoogleSheet(insertGoogleSheetOpts);
+		}
+
+		// TODO: Decide return value.
 
 		// Return the totals.
 		return totals;
