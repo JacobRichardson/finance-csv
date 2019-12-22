@@ -119,7 +119,7 @@ class FinanceCsv {
 		this.dependencies.toTransactions = toTransactions || this.dependencies.toTransactions
 
 		// Set result equal to the result of to transaction with the opts.
-		const result = this.dependencies.toTransaction(opts);
+		const result = this.dependencies.toTransactions(opts);
 
 		// Return the result.
 		return result;
