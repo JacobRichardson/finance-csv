@@ -156,7 +156,7 @@ class FinanceCsv {
 	 * all the totals of the different categories.
 	 *  @param {String} opts.provider The actual provider.
 	 * @param {Object} [opts.providers] The providers schema.
-	 * @returns
+	 * @returns {Object} The sheet data.
 	 * @memberof FinanceCsv
 	 */
 	toSheetData({ totals, provider, providers }) {
@@ -183,7 +183,7 @@ class FinanceCsv {
 	 * @param {Object} opts.data The data object which contains the
 	 * cell pair as the key and the value as the value of that property.
 	 * @param {Object} [opts.googleSheet] The google sheet dependency.
-	 * @returns
+	 * @returns {Boolean} Wether the insert was successful or not.
 	 * @memberof FinanceCsv
 	 */
 	async insertGoogleSheet ({ sheetId, data, googleSheet }) {
