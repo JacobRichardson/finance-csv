@@ -23,6 +23,9 @@ const discoverSchema = {
 
         }
     }
+    , totals: {
+        'Gasoline': '21,H'
+    }
 }
 
 /**
