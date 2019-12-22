@@ -49,11 +49,25 @@ async function insertIntoGoogleSheet ({ sheetId, data, googleSheet }) {
 			throw new Error('Invalid data provided. The key must contain a comma.');
 		}
 
-		// Set row equal to parsing the first value as an integer when spitting on the comma.
-		row = parseInt(key.split(',')[0], 10);
+		// Set col equal the second value of splitting on the comma and putting it to lowercase.
+		col = key.split(',')[1].toLowerCase();
 
-		// Set col equal to parsing the second value as an integer when splitting on the comma.
-		col = parseInt(key.split(',')[1], 10);
+		// If the column's length is equal to 1.
+		if (col.length === 1) {
+
+			// Set col equal to the char code of the first character minus 96.
+			col = col.charCodeAt(0) - 96;
+		}
+		// TODO: Handle columns passed 26.
+		// The column's length is greater than 1.
+		else {
+
+			// Parse the col.
+			col = parseInt(col, 10);
+		}
+
+		// Set row equal to the parsing the first value as a integer.
+		row = parseInt(key.split(',')[0], 10)
 
 		try {
 
