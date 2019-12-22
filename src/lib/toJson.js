@@ -82,7 +82,7 @@ function toJson(data) {
         row.forEach((value, index) => {
 
             // Set the header value as the property and the value as the value.
-            rowJson[headersMap[index]] = value;
+            rowJson[headersMap[index]] = value.trim();
         });
 
         // Push the json into result.
