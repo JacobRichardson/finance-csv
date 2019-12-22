@@ -475,6 +475,271 @@ the total amount of credits.</p>
     
 
     
+    <h4 class="name" id="insertIntoGoogleSheet"><span class="type-signature">(async) </span>insertIntoGoogleSheet<span class="signature">(opts)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Inserts data into a sheet.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The opts object.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>sheetId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The id of the Google sheet.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An object of key value pairs such that
+the key is the cell number separated by a comma ex: 1,2 means row
+1 column 2 and the value of the key should be the data that is
+going to be inserted into that cell.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>googleSheet</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The dependency to interact with the
+Google sheet.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_insertGoogleSheet.js.html">lib/insertGoogleSheet.js</a>, <a href="lib_insertGoogleSheet.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>An error.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="processCsv"><span class="type-signature"></span>processCsv<span class="signature">(csv)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;String>>}</span></h4>
     
 
@@ -825,7 +1090,7 @@ the keys equal to the column headers.</p>
     
 
     
-    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="toSheetData"><span class="type-signature"></span>toSheetData<span class="signature">(totals)</span><span class="type-signature"> &rarr; {Object}</span></h4>
     
 
     
@@ -833,7 +1098,9 @@ the keys equal to the column headers.</p>
 
 
 <div class="description">
-    <p>Transforms the raw json into a transaction.</p>
+    <p>This function handles converting the total object
+into an object that can be used to insert the data
+into the google sheet.</p>
 </div>
 
 
@@ -869,7 +1136,7 @@ the keys equal to the column headers.</p>
 
         <tr>
             
-                <td class="name"><code>json</code></td>
+                <td class="name"><code>totals</code></td>
             
 
             <td class="type">
@@ -885,7 +1152,7 @@ the keys equal to the column headers.</p>
 
             
 
-            <td class="description last"><p>The raw json data from the csv file.</p></td>
+            <td class="description last"><p>The totals object.</p></td>
         </tr>
 
     
@@ -926,7 +1193,7 @@ the keys equal to the column headers.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_captialOne.js.html">schema/captialOne.js</a>, <a href="schema_captialOne.js.html#line39">line 39</a>
+        <a href="lib_toSheetData.js.html">lib/toSheetData.js</a>, <a href="lib_toSheetData.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -955,7 +1222,10 @@ the keys equal to the column headers.</p>
 
         
 <div class="param-desc">
-    <p>A transaction object to be inserted into the db.</p>
+    <p>An object that can be passed to the
+insert google sheet module to insert the data. Key value
+pairs of the cell number and the data to be inserted into
+the cell number. ex: {'1,A': 10}</p>
 </div>
 
 
@@ -1562,7 +1832,166 @@ the keys equal to the column headers.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="schema_discover.js.html">schema/discover.js</a>, <a href="schema_discover.js.html#line33">line 33</a>
+        <a href="schema_discover.js.html">schema/discover.js</a>, <a href="schema_discover.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A transaction object to be inserted into the db.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toTransaction"><span class="type-signature"></span>toTransaction<span class="signature">(json)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Transforms the raw json into a transaction.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The raw json data from the csv file.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="schema_captialOne.js.html">schema/captialOne.js</a>, <a href="schema_captialOne.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -2197,13 +2626,13 @@ objects using the providers 'to transaction' function.</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="FinanceCsv.html">FinanceCsv</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bulkInsert">bulkInsert</a></li><li><a href="global.html#calculateTotals">calculateTotals</a></li><li><a href="global.html#processCsv">processCsv</a></li><li><a href="global.html#toJson">toJson</a></li><li><a href="global.html#toTransaction">toTransaction</a></li><li><a href="global.html#toTransactions">toTransactions</a></li><li><a href="global.html#verifyHeaders">verifyHeaders</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="FinanceCsv.html">FinanceCsv</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bulkInsert">bulkInsert</a></li><li><a href="global.html#calculateTotals">calculateTotals</a></li><li><a href="global.html#insertIntoGoogleSheet">insertIntoGoogleSheet</a></li><li><a href="global.html#processCsv">processCsv</a></li><li><a href="global.html#toJson">toJson</a></li><li><a href="global.html#toSheetData">toSheetData</a></li><li><a href="global.html#toTransaction">toTransaction</a></li><li><a href="global.html#toTransactions">toTransactions</a></li><li><a href="global.html#verifyHeaders">verifyHeaders</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Dec 16 2019 01:49:03 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Sun Dec 22 2019 00:03:35 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
