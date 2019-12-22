@@ -37,7 +37,7 @@ function toTransaction(json) {
 
     // Return an object with the correct properties.
     return {
-        date: json['Transaction Date'],
+        date: json['Date'],
         description: json['Merchant Name'],
         category: json['Merchant Category Description'],
         amount: (json['Amount'] * -1)
